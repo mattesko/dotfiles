@@ -1,0 +1,16 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Matthew Lesko-Krleza
+	email = mlesko1996@gmail.com
+
+[core]
+	editor = /usr/bin/vim
+
+[alias]
+	s = status
+	l = log
+	d = diff
+	ca = commit --amend
+	ch = checkout
+	cm = commit 
+

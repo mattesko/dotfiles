@@ -1,0 +1,35 @@
+#!/bin/bash
+# Add any environment variables here
+
+####################
+### PATH exports ###
+####################
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# go binaries
+export PATH=$PATH:$GOPATH/bin
+
+# conda
+export PATH="$HOME/miniconda3/condabin:$PATH"
+
+#####################
+### Other exports ###
+#####################
+
+# colored GCC warnings and errors
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Default editor
+export EDITOR='/usr/bin/vim'
+
+# vimrc location
+#export MYVIMRC="$HOME/.vim/.vimrc"
+
