@@ -19,6 +19,6 @@ fi
 # 
 # Add your environment variables in the file below
 #
-if [ -f "$HOME/.dotfiles/.variables" ] ; then
-    source $HOME/.dotfiles/.variables
+if [ -f "$HOME/.dotfiles/.envvars" ] ; then
+    source $HOME/.dotfiles/.envvars
 fi
