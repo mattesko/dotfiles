@@ -29,4 +29,4 @@ alias gs='git status'
 
 
 # To track dotfiles under $HOME
-alias dotgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
