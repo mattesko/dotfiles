@@ -12,5 +12,10 @@
 	d = diff
 	ca = commit --amend
 	ch = checkout
-	cm = commit 
+    c = checkout
+    cm = commit 
+    b = branch
+    lg = log --color --graph --all --abbrev-commit --decorate --pretty=oneline
 
+[pull]
+    rebase = true

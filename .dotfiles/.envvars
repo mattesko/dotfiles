@@ -33,3 +33,4 @@ export EDITOR='/usr/bin/vim'
 # vimrc location
 #export MYVIMRC="$HOME/.vim/.vimrc"
 
+export PATH=$PATH:$HOME/go/bin
