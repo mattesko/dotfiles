@@ -1,0 +1,7 @@
+# Include default shortcuts 
+$include /etc/inputrc
+
+## Arrow up
+"\e[A":history-search-backward
+## Arrow down
+"\e[B":history-search-forward

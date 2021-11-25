@@ -35,7 +35,7 @@ set magic
 " Show matching brackets when text indicator is over them
 set showmatch 
 " How many tenths of a second to blink when matching brackets
-set mat=2
+set mat=1
 
 " => Colors and fonts
 " =============
@@ -88,3 +88,15 @@ function! HasPaste()
     endif
     return ''
 endfunction
+
+
+
+" For vim-plug plugins
+" :PlugInstall to install plugins.
+call plug#begin('~/.vim/plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'preservim/nerdtree'
+call plug#end()

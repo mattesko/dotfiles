@@ -14,11 +14,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# cd
+alias ..='cd ..'
 
 # ls
-alias ll='ls -alF'
+alias ll='ls -aClF --human-readable'
 alias la='ls -A'
-alias l='ls -CF'
+alias l='ls -alF --human-readable'
+alias lt='ls --human-readable --size -1 -S --classify'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -26,6 +29,10 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # Git
 alias gs='git status'
+
+# Hacks
+alias myalias="vim $HOME/.dotfiles/.bash_aliases"
+alias count='find . -type f | wc -l' # Recursively count number of files in directory
 
 
 # To track dotfiles under $HOME

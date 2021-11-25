@@ -5,17 +5,21 @@
 
 [core]
 	editor = /usr/bin/vim
+    pager = /usr/bin/less
 
 [alias]
 	s = status
 	l = log
 	d = diff
 	ca = commit --amend
-	ch = checkout
     c = checkout
     cm = commit 
-    b = branch
+    b = branch --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) %(color:green)(%(committerdate:relative)) [%(authorname)]' --sort=-committerdate
     lg = log --color --graph --all --abbrev-commit --decorate --pretty=oneline
-
+    ll = log --oneline
+    config-alias = config --get-regexp 'alias'
+    config-edit = config --global --edit
+    last = log -1 HEAD --stat
+    dv = difftool -t vimdiff -y
 [pull]
     rebase = true

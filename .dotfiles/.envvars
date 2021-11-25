@@ -14,11 +14,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# go binaries
-export PATH=$PATH:$GOPATH/bin
-
 # conda
-export PATH="$HOME/miniconda3/condabin:$PATH"
+# this is already exported in ~/.dotfiles/.miniconda3
+#export PATH="$HOME/miniconda3/condabin:$PATH"
+
+# go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 #####################
 ### Other exports ###
@@ -33,4 +35,3 @@ export EDITOR='/usr/bin/vim'
 # vimrc location
 #export MYVIMRC="$HOME/.vim/.vimrc"
 
-export PATH=$PATH:$HOME/go/bin
