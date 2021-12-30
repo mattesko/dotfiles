@@ -75,6 +75,8 @@ is_clean_git_dir() {
 }
 
 build_prompt() {
+    # Needs to be the first command so that it can successfully capture last command's exit status
+    local RC="$?"
     # Text Reset
     local Reset='\[\e[0m\]'
 
@@ -90,24 +92,24 @@ build_prompt() {
 
     # Show working directory with X number of levels 
     export PROMPT_DIRTRIM=2
-    EXIT="$?"
     
     PS1='${debian_chroot:+($debian_chroot)}'
     PS1+="${BGreen}\u ${BBlue}\w${Reset}$(parse_git_branch)$(is_clean_git_dir) " 
 
-    if [ $EXIT != 0 ]; then  # add arrow color dependent on exit code
-        PS1+="${BRed}\$${Reset} "
+    if [ $RC != 0 ]; then  # add arrow color dependent on exit code
+        PS1+="${BRed}→${Reset} "
     else
-        PS1+="${Reset}\$${Reset} "
+        PS1+="${BGreen}→${Reset} "
     fi
 }
+PROMPT_COMMAND=build_prompt
 
-if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND=build_prompt
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
+#if [ "$color_prompt" = yes ]; then
+#    PROMPT_COMMAND=build_prompt
+#else
+#    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+#fi
+#unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -145,5 +147,10 @@ fi
 # Conda initialization
 if [ -f "$HOME/.dotfiles/.miniconda3" ] ; then
     source $HOME/.dotfiles/.miniconda3
+fi
+
+# Autocomplete
+if [ -f "$HOME/.dotfiles/.bash_autocomplete.sh" ]; then
+    source "$HOME/.dotfiles/.bash_autocomplete.sh"
 fi
 
