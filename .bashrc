@@ -94,7 +94,7 @@ build_prompt() {
     export PROMPT_DIRTRIM=2
     
     PS1='${debian_chroot:+($debian_chroot)}'
-    PS1+="${BGreen}\u ${BBlue}\w${Reset}$(parse_git_branch)$(is_clean_git_dir) " 
+    PS1+="${BGreen}\u ${BCyan}\w${Reset}$(parse_git_branch)$(is_clean_git_dir) " 
 
     if [ $RC != 0 ]; then  # add arrow color dependent on exit code
         PS1+="${BRed}→${Reset} "
