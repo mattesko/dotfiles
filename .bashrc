@@ -69,7 +69,8 @@ is_clean_git_dir() {
             /usr/bin/printf ' \[\e[1;32m\]\xE2\x9C\x93\[\e[0m\]]'
         else
             # Dirty Output: "{RedMark} ]"
-            /usr/bin/printf ' \[\e[1;31m\]\xF0\x90\x84\x82\[\e[0m\]]'
+            #/usr/bin/printf ' \[\e[1;31m\]\xF0\x90\x84\x82\[\e[0m\]]'
+            /usr/bin/printf ' \[\e[1;31m\]X\[\e[0m\]]'
         fi
     fi
 }

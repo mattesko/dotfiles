@@ -34,6 +34,8 @@ alias gs='git status'
 alias myalias="vim $HOME/.dotfiles/.bash_aliases"
 alias count='find . -type f | wc -l' # Recursively count number of files in directory
 
-
 # To track dotfiles under $HOME
 alias dgit='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# os-release
+alias os-release='cat /etc/os-release'
